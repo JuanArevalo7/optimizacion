@@ -1,0 +1,41 @@
+/*********************************************
+ * OPL 22.1.2.0 Data
+ * Author: jnare
+ * Creation Date: 1/11/2025 at 10:50:41 a. m.
+ *********************************************/
+// Archivo: datos_mini_prueba.dat
+// Resultado esperado de F.O.: 320.00
+
+I = {"P1"};
+J = {"S1"};
+T = {"Q1"};
+K = {1, 2}; // Dos tramos
+
+// Demanda D[i][t]
+D = [
+  // Q1
+  [40] // P1
+];
+
+// Capacidad Cap[j][t]
+Cap = [
+  // Q1
+  [100] // S1
+];
+
+// Límites de Volumen de los Tramos L[k] y U[k]
+L = [0, 40];   // Tramo 1 comienza en 0. Tramo 2 comienza en 40.
+U = [39.99, 100]; // Tramo 1 termina antes de 40. Tramo 2 termina en 100 (Big M)
+
+// Costo Unitario C[i][j][k][t]: P1, S1
+C = [
+  // P1
+  [
+    // S1
+    [
+      // Q1
+      [10.00], // Costo para k=1
+      [8.00]   // Costo para k=2
+    ]
+  ]
+];
